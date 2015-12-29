@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block container %}
+  <h1>{% if object %}Update{% else %}Add{% endif %} service</h1>
+
+  <form action="." method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-default">Save</button>
+  </form>
+{% endblock %}

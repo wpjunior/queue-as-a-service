@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block container %}
+  <h1>Services</h1>
+
+  <a href="add/" class="btn btn-default">
+    <i class="glyphicon glyphicon-plus"></i>Add
+  </a>
+  <br/>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for service in service_list %}
+        <tr>
+          <td>
+            <a href="{{service.get_absolute_url}}">{{service.name}}</a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td>services not found</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
