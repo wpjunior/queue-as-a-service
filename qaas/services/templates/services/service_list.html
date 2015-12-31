@@ -11,6 +11,7 @@
     <thead>
       <tr>
         <th>Name</th>
+        <th>Topic</th>
       </tr>
     </thead>
     <tbody>
@@ -19,10 +20,13 @@
           <td>
             <a href="{{service.get_absolute_url}}">{{service.name}}</a>
           </td>
+          <td>
+            {{service.topic}}
+          </td>
         </tr>
       {% empty %}
         <tr>
-          <td>services not found</td>
+          <td colspan="2">services not found</td>
         </tr>
       {% endfor %}
     </tbody>

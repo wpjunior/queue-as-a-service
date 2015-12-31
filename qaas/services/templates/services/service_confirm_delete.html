@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block container %}
+  <h1>Delete "{{object.name}}" service ?</h1>
+
+  <form action="." method="POST">
+    {% csrf_token %}
+
+    <button type="submit" class="btn btn-danger">
+      Delete
+    </button>
+
+  </form>
+{% endblock %}
