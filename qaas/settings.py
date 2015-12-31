@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'qaas.services',
+    'qaas.consumers',
 ]
 
 MIDDLEWARE_CLASSES = [

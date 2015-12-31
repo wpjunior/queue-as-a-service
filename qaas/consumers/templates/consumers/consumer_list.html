@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block container %}
+  <h1>Consumers</h1>
+
+  <a href="{% url 'consumer-add' %}" class="btn btn-default">
+    <i class="glyphicon glyphicon-plus"></i>Add
+  </a>
+  <br/>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for consumer in consumer_list %}
+        <tr>
+          <td>
+            <a href="{{consumer.get_absolute_url}}">{{consumer.name}}</a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td>Consumers not found</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
