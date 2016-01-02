@@ -11,6 +11,8 @@
     <thead>
       <tr>
         <th>Name</th>
+        <th>Queue</th>
+        <th>Service</th>
       </tr>
     </thead>
     <tbody>
@@ -19,10 +21,16 @@
           <td>
             <a href="{{consumer.get_absolute_url}}">{{consumer.name}}</a>
           </td>
+          <td>
+            {{consumer.queue}}
+          </td>
+          <td>
+            {{consumer.service}}
+          </td>
         </tr>
       {% empty %}
         <tr>
-          <td>Consumers not found</td>
+          <td colspan="3">Consumers not found</td>
         </tr>
       {% endfor %}
     </tbody>

@@ -17,5 +17,7 @@ class Service(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        self.topic = slugify(self.name)
+        if not self.topic:
+            self.topic = slugify(self.name)
+            
         return super(Service, self).save(*args, **kwargs)
